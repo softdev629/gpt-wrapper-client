@@ -13,6 +13,7 @@ const CheckPage = () => {
   const [detailResult, setDetailResult] = useState("");
   const [factualResult, setFactualResult] = useState("");
   const [loading, setLoading] = useState(false);
+  const [fileName, setFileName] = useState("");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const logged_in = localStorage.getItem("logged_in");
@@ -31,6 +32,7 @@ const CheckPage = () => {
     const files = event.target.files;
     if (files && files.length > 0) {
       const file = files[0];
+      setFileName(file.name);
       try {
         const arrayBuffer = await file.arrayBuffer();
         const result = await mammoth.extractRawText({ arrayBuffer });
@@ -141,6 +143,7 @@ const CheckPage = () => {
                   </svg>
                   Choose File
                 </button>
+                <span className="mt-3 text-white">{fileName}</span>
               </div>
               <input
                 type="file"

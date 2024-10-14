@@ -1,20 +1,25 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import SigninPage from "./pages/signin.page"
+import SigninPage from "./pages/signin.page";
+import CheckPage from "./pages/check.page";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SigninPage />
-  }
-])
+    element: <SigninPage />,
+  },
+  {
+    path: "/check",
+    element: <CheckPage />,
+  },
+]);
 
 function App() {
   return (
     <>
       <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,12 +1,24 @@
 import { FormEvent, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const SigninPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    
+    axios
+      .post(`${import.meta.env.VITE_SERVER_ENDPOINT}/signin`, {
+        email,
+        password,
+      })
+      .then(({ data }) => {
+        localStorage.setItem("logged_in", data.logged_in ? "true" : "false");
+        if (data.logged_in) navigate("/check");
+      });
   };
 
   return (

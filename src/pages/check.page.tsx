@@ -70,7 +70,7 @@ const CheckPage = () => {
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900 pb-5 relative">
-      <div className="flex flex-col px-6 py-8 mx-auto min-h-screen lg:py-0 max-w-6xl gap-5 text-white">
+      <div className="flex flex-col px-6 py-8 mx-auto min-h-screen lg:py-0 max-w-6xl gap-5 dark:text-white text-black">
         <h1 className="mt-8 text-3xl font-extrabold text-center">
           Fact Checker, Sources, and Detail Verification
         </h1>

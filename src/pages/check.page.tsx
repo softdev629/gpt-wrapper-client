@@ -75,13 +75,15 @@ const CheckPage = () => {
           Fact Checker, Sources, and Detail Verification
         </h1>
         <h2 className="text-xl text-center">
-          This tool is designed to assist you in verifying article details,
-          sources, and facts. While it is a valuable resource, remember that it
-          is not a replacement for careful research and diligence. Ensure all
-          information in your work is fully supported by credible sources, and
-          account for every claim with precision. Use this tool as a guide to
-          refine your content, but do not over-rely on it. Proper research is
-          essential for creating high-quality, reliable content.
+          This tool is designed to guide you in refining article details,
+          verifying sources, and ensuring factual accuracy. While it can help
+          enhance your content, it should be viewed as a supportive resource,
+          not a substitute for thorough research and critical thinking. Use it
+          to identify areas for improvement, but always ensure that your final
+          work is backed by credible, well-researched information. Rely on your
+          own judgment and make sure that every claim in your content can be
+          confidently accounted for. High-quality content comes from a balance
+          of diligence and informed use of this tool.
         </h2>
         <div
           className="h-80 bg-[#05cf9a] my-2 rounded-lg p-2 w-full cursor-pointer hover:bg-[#04ac80]"

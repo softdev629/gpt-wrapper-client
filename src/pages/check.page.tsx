@@ -12,6 +12,7 @@ const CheckPage = () => {
   const [sourceResult, setSourceResult] = useState("");
   const [detailResult, setDetailResult] = useState("");
   const [factualResult, setFactualResult] = useState("");
+  const [techResult, setTechResult] = useState("");
   const [loading, setLoading] = useState(false);
   const [fileName, setFileName] = useState("");
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -63,6 +64,9 @@ const CheckPage = () => {
           case "factual":
             setFactualResult(data.result);
             break;
+          case "tech":
+            setTechResult(data.result);
+            break;
         }
         setLoading(false);
       });
@@ -72,18 +76,10 @@ const CheckPage = () => {
     <section className="bg-gray-50 dark:bg-gray-900 pb-5 relative">
       <div className="flex flex-col px-6 py-8 mx-auto min-h-screen lg:py-0 max-w-6xl gap-5 dark:text-white text-black">
         <h1 className="mt-8 text-3xl font-extrabold text-center">
-          Fact Checker, Sources, and Detail Verification
+          Fact Checker, Sources, Detail and Technical Verification
         </h1>
         <h2 className="text-xl text-center">
-          This tool is designed to guide you in refining article details,
-          verifying sources, and ensuring factual accuracy. While it can help
-          enhance your content, it should be viewed as a supportive resource,
-          not a substitute for thorough research and critical thinking. Use it
-          to identify areas for improvement, but always ensure that your final
-          work is backed by credible, well-researched information. Rely on your
-          own judgment and make sure that every claim in your content can be
-          confidently accounted for. High-quality content comes from a balance
-          of diligence and informed use of this tool.
+        This tool is designed to guide you in refining article details, verifying sources, ensuring factual accuracy, and verifying technical details if applicable. While it can help enhance your content, it should be viewed as a supportive resource, not a substitute for thorough research and critical thinking. Use it to identify areas for improvement, but always ensure that your final work is backed by credible, well-researched information. Rely on your own judgment and make sure that every claim in your content, including technical details, can be confidently accounted for. High-quality content comes from a balance of diligence and informed use of this tool.
         </h2>
         <div
           className="h-80 bg-[#05cf9a] my-2 rounded-lg p-2 w-full cursor-pointer hover:bg-[#04ac80]"
@@ -184,6 +180,15 @@ const CheckPage = () => {
           </button>
           <div className="px-8 py-5 bg-white border border-[#cbcbcb] rounded w-full">
             <ReactMarkdown>{factualResult}</ReactMarkdown>
+          </div>
+          <button
+            className="bg-[#1266f1] text-white rounded py-2 px-5 hover:bg-[#1161e5]"
+            onClick={() => handleVerify("tech")}
+          >
+            SCAN FOR TECHNICAL VERIFICATION
+          </button>
+          <div className="px-8 py-5 bg-white border border-[#cbcbcb] rounded w-full">
+            <ReactMarkdown>{techResult}</ReactMarkdown>
           </div>
         </div>
       </div>
